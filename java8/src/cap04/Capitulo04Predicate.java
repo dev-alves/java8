@@ -21,7 +21,9 @@ public class Capitulo04Predicate {
 		
 		Predicate<Usuario> predicate = p ->  p.isModerador() ;
 		
+		//aguarda um Predicate como parâmetro
 		usuarios.removeIf(predicate); // ou usuarios.removeIf(u->u.isModerador());
+		//aguarda um Consumer como parâmetro
 		usuarios.forEach(u-> System.out.println(u.getNome()));
 		
 	}
