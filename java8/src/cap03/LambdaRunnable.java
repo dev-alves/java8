@@ -1,7 +1,5 @@
 package cap03;
 
-import cap02.Usuario;
-
 /**
  * O conceito de interfaces funcionais vale para versões anteriores ao Java 8!
  * @author dev
