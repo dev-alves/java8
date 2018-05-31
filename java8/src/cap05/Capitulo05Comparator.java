@@ -11,11 +11,16 @@ public class Capitulo05Comparator {
 	
 	public static void main(String[] args) {
 		
+		//com classes anônimas
 		Comparator<Usuario> comparator = new Comparator<Usuario>() {
 			public int compare (Usuario u1, Usuario u2) {
 				return u1.getNome().compareTo(u2.getNome());
 			}
 		};
+		
+		//ou expressões lambdas
+		
+		Comparator<Usuario> compLambda = (u1, u2) -> u1.getNome().compareTo(u2.getNome());
 		
 		List<Usuario> usuarios = new ArrayList<Usuario>();
 		Usuario usuario1 = new Usuario("u3", 1, true);
@@ -29,6 +34,16 @@ public class Capitulo05Comparator {
 		
 		Collections.sort(usuarios, comparator);
 		usuarios.forEach(u-> System.out.println(u.toString()));
+		
+		System.out.println("\nCom lambda!");
+		Collections.sort(usuarios, compLambda);
+		usuarios.forEach(u->System.out.println(u.toString()));
+		
+		//ou tudo em uma linha com expressões lambda!
+		
+		Collections.sort(usuarios, (u1,u2)->u1.getNome().compareTo(u2.getNome()));
+		System.out.println("\nTudo em uma linha!");
+		usuarios.forEach(u->System.out.println(u.toString()));
 	}
 
 }
