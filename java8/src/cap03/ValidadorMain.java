@@ -7,5 +7,4 @@ public class ValidadorMain {
 		System.out.println(validarCEP.validar("12345-123"));
 	}
 	
-	
 }
