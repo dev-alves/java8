@@ -44,6 +44,16 @@ public class Capitulo05Comparator {
 		Collections.sort(usuarios, (u1,u2)->u1.getNome().compareTo(u2.getNome()));
 		System.out.println("\nTudo em uma linha!");
 		usuarios.forEach(u->System.out.println(u.toString()));
+		
+		//enxugando código utilizando o sort do List!
+		usuarios.sort((u1, u2)-> u1.getNome().compareTo(u2.getNome()));
+		System.out.println("\nEnxugando código utilizando o sort do List!");
+		usuarios.forEach(u->System.out.println(u.toString()));
+		
+		//enxugando ainda mais! :D
+		usuarios.sort(Comparator.comparing(u -> u.getNome()));
+		System.out.println("\nEnxugando código ainda mais!!");
+		usuarios.forEach(u->System.out.println(u.toString()));
 	}
 
 }
