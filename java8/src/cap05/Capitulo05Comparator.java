@@ -1,6 +1,7 @@
 package cap05;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -50,14 +51,17 @@ public class Capitulo05Comparator {
 		System.out.println("\nEnxugando código utilizando o sort do List!");
 		usuarios.forEach(u->System.out.println(u.toString()));
 		
+		
+		//O método estático 'comparing' só funciona se passar um lambda que devolve um comprable 
 		//enxugando ainda mais! :D
 		usuarios.sort(Comparator.comparing(u -> u.getNome()));
 		System.out.println("\nEnxugando código ainda mais!!");
 		usuarios.forEach(u->System.out.println(u.toString()));
 		
-		/**
-		 * O método estático 'comparing' só funciona se passar um lambda que devolve um comprable
-		 */
+		
+		List<Integer> numbers = Arrays.asList(1, 10, 9, 2, 3, 5, 8);
+		numbers.sort(Comparator.naturalOrder()); //Retona um comparator que compara com objetos Comparable em ordem natural (crescente)
+		System.out.println(numbers);
 	}
 
 }
