@@ -54,6 +54,10 @@ public class Capitulo05Comparator {
 		usuarios.sort(Comparator.comparing(u -> u.getNome()));
 		System.out.println("\nEnxugando código ainda mais!!");
 		usuarios.forEach(u->System.out.println(u.toString()));
+		
+		/**
+		 * O método estático 'comparing' só funciona se passar um lambda que devolve um comprable
+		 */
 	}
 
 }
