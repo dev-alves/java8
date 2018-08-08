@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 
 import cap02.Usuario;
 
-public class StreamsECollectors {
+public class Streams {
 	
 	public static void main(String[] args) {
 		
