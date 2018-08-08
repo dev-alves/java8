@@ -29,6 +29,7 @@ public class CollectorsEStreams {
 			.filter( u -> u.getPontos()> 10)
 			.collect(Collectors.toList());
 		
+		
 		System.out.println("Com List");
 		usuariosFiltrados.sort(Comparator.comparing(Usuario::getPontos)
 				.thenComparing(Usuario::getNome).reversed());
@@ -42,9 +43,17 @@ public class CollectorsEStreams {
 		set.forEach(System.out::println); 
 		
 		//ou
-		HashSet<Usuario> hash = stream.collect(Collectors.toCollection(HashSet::new));
+		Stream<Usuario> streamSet = usuarios.stream().filter(u-> u.getPontos() < 10);
+		HashSet<Usuario> hash = streamSet.collect(Collectors.toCollection(HashSet::new));
 		System.out.println("\nCom hash");
 		hash.forEach(System.out::println);
+		
+		//Obtendo os pontos de todos os usuarios
+		List<Integer> listaDePontos = usuarios.stream()
+				.map(Usuario::getPontos)
+				.collect(Collectors.toList());
+		listaDePontos.forEach(System.out::println);
+		
 	}
 
 }
