@@ -54,6 +54,9 @@ public class CollectorsEStreams {
 				.collect(Collectors.toList());
 		listaDePontos.forEach(System.out::println);
 		
+		
+		System.out.println("O map não altera a lista");
+		usuarios.forEach(System.out::println);
 	}
 
 }
